@@ -1,0 +1,29 @@
+result = []
+
+def divider(a, b):
+    try:
+        if a < b:
+            raise ValueError("ValueError: a < b")
+        if b > 100:
+            raise IndexError("IndexError: b > 100")
+        return a/b
+    except ValueError as ve:
+        print(f"Error: {ve}")
+        return None
+    except IndexError as ie:
+        print(f"Error: {ie}")
+        return None
+    except TypeError as te:
+        print(f"TypeError: {te}")
+        return None
+    except ZeroDivisionError as zde:
+        print(f"ZeroDivisionError: {zde}")
+        return None
+
+data = {10: 2, 2: 5, "123": 4, 18: 0, 8: 4}
+
+for key, value in data.items():
+    res = divider(key, value)
+    result.append(res)
+
+print(result)
